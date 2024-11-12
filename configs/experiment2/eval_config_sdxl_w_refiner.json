@@ -1,0 +1,21 @@
+{
+  "MODEL": {
+    "BASE_MODEL_NAME": "stabilityai/stable-diffusion-xl-base-1.0",
+    "ENABLE_XFORMERS": true
+  },
+  "DATA": {
+    "MIN_ASPECT_RATIO": null,
+    "MAX_ASPECT_RATIO": 0.69,
+    "N_SAMPLES": 40000
+  },
+  "ACCELERATOR": { "MIXED_PRECISION": "bf16" },
+  "EVALUATION": { "BATCH_SIZE": 8 },
+  "GENERATION": {
+    "REFINER_NAME": "stabilityai/stable-diffusion-xl-refiner-1.0",
+    "REFINE_FRAC": 0.2,
+    "TARGET_RESOLUTION": [512, 360],
+    "BEST_OF_N": 1,
+    "SEED": 0,
+    "GUIDANCE_SCALE": 5
+  }
+}

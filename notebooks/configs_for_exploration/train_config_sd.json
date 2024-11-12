@@ -1,0 +1,40 @@
+{
+    "MODEL": {
+      "BASE_MODEL_NAME": "runwayml/stable-diffusion-v1-5",
+      "TRAIN_TEXT_ENCODER": true,
+      "ENABLE_XFORMERS": true,
+      "ENABLE_GRADIENT_CHECKPOINTING": true
+    },
+    "DATA_AUGMENTATION": {
+      "RESIZE_RESOLUTION": 368,
+      "TARGET_RESOLUTION": [512, 360],
+      "RANDOM_HORIZONTAL_FLIP": true,
+      "RANDOM_CROP": true
+    },
+    "LORA": {
+      "RANK": 4,
+      "ALPHA": 4,
+      "TARGET": ["k", "q", "v", "o"]
+    },
+    "ACCELERATOR": {
+      "MIXED_PRECISION": "bf16",
+      "GRADIENT_ACCUMULATION_STEPS": 1,
+      "CHECK_UNUSED_PARAMS": false,
+      "MAX_GRAD_NORM": 1.0
+    },
+    "TRAINING": {
+      "EPOCHS": 20,
+      "TEST_SIZE": 0.05,
+      "BATCH_SIZE": { "TRAIN": 4, "TEST": 4 },
+      "ADAM_OPTIMIZER": {
+        "LEARNING_RATE": 1e-6,
+        "BETA1": 0.9,
+        "BETA2": 0.999,
+        "WEIGHT_DECAY": 1e-2,
+        "EPSILON": 1e-8
+      },
+      "LR_SCHEDULER": { "TYPE": "constant", "WARMUP_STEPS": 0 }
+    },
+    "DREAMBOOTH": null
+  }
+  

@@ -1,0 +1,10 @@
+{
+    "MODEL": {
+      "BASE_MODEL_NAME": "runwayml/stable-diffusion-v1-5",
+      "ENABLE_XFORMERS": true
+    },
+    "ACCELERATOR": { "MIXED_PRECISION": "fp16" },
+    "EVALUATION": { "BATCH_SIZE": 8 },
+    "GENERATION": { "TARGET_RESOLUTION": [512, 360], "BEST_OF_N": 1, "SEED": 0 }
+  }
+  
