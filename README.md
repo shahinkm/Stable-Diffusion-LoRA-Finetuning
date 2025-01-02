@@ -109,6 +109,7 @@ This project demonstrates the application of LoRA for fine-tuning Stable Diffusi
 ### Training
 Run the training script:
 
+
 ```bash
 bash scripts/train_ldm_lora.sh
 ```
